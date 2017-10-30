@@ -2,14 +2,29 @@
 title: Le Wagon - Middleman
 ---
 
-<div id="home">
-  <div class="home-content">
-    <%= image_tag "logo.png", width: "200" %>
-    <p>
-      Middleman is now running!
-    </p>
-    <p class="about">
-      <%= link_to "More about this template", "about.html" %>
-    </p>
+<div class="container">
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://www.pingv.com/f/styles/grid-scale-3/public/blogimgs/barcelona-sprint-1.jpg?itok=GRG3w1tN');">
+    <div class="banner-content">
+      <h1>Le Wagon</h1>
+      <p>Learn to code, change your life!</p>
+      <a class="btn btn-primary btn-lg">Start now</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% %w[Mogadishu Amsterdam Paris Berlin London Lisbon Barcalona Sydney Bali Montreal Nijmegen Athene Madrid Cairo Tilburg Rotterdam].each do |city|%>
+    <div class="col-xs-6 col-sm-4 col-lg-3">
+      <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/<%= city.downcase %>');">
+        <div class="card-category">Popular</div>
+        <div class="card-description">
+          <h2>Le Wagon <%= city%></h2>
+          <p><%= data.cool_words.sample.capitalize %></p>
+        </div>
+        <a class="card-link" href="#" ></a>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>
